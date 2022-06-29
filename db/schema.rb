@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_29_030118) do
 
   create_table "entities", force: :cascade do |t|
     t.string "name", null: false
-    t.money "amount", scale: 2, default: "0.0", null: false
+    t.decimal "amount", default: "0.0", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
