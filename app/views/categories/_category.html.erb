@@ -1,2 +1,15 @@
-<div id="<%= dom_id category %>">
-</div>
+<%if current_page?(categories_path)%>
+<a href=<%=category_path(category.id) %>>
+    <div id="<%= dom_id category %>">
+        <%= image_tag (category.icon), height: '115', width: '115'%>
+        <%= category.name %>
+        $<%= category.entities.map {|entity| entity.amount}.sum %>
+    </div>
+</a>
+<%else%>
+    <div id="<%= dom_id category %>">
+        <%= image_tag (category.icon), height: '115', width: '115'%>
+        <%= category.name %>
+        $<%= category.entities.map {|entity| entity.amount}.sum %>
+    </div>
+<%end%>
