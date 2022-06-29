@@ -1,0 +1,6 @@
+<div class="<%entity%>">
+    <% p entity %>
+    <%= entity.name %>
+    $<%= entity.amount %>
+    <%= entity.created_at.to_fs(:db)[0..9]%>
+</div>
