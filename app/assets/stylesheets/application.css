@@ -30,6 +30,21 @@ button {
   display: none;
 }
 
+/* Log In view */
+
+.logIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.logIn > * {
+  font-size: 150%;
+  padding: 0.5rem;
+}
+
 /* Navbar */
 
 .navbar {
