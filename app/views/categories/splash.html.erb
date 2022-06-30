@@ -1,3 +1,7 @@
-<h1>This is the splash view</h1>
-<%= button_to new_user_session_path "Sign In"%>
-<%= button_to new_user_registration_path "Sign Up"%>
+<section class="splash">
+<%= image_tag "budgeyLogo.png", height: 150, width: 150, :style => "margin: 0 auto" %>
+<div>
+    <%= button_to "LOG IN", new_user_session_path, class: "splash__LogIn"%>
+    <%= button_to "SIGN UP", new_user_registration_path, class: "splash__SignUp"%>
+</div>
+</section>
