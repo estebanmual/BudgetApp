@@ -7,7 +7,6 @@ class CategoriesController < ApplicationController
     @categories = Category.includes(:entities).all
   end
 
-
   def show
     @entities = @category.entities.order(created_at: :desc)
   end
@@ -35,7 +34,7 @@ class CategoriesController < ApplicationController
   def redirect
     redirect_to root_path unless user_signed_in?
   end
-  
+
   def set_category
     @category = Category.find(params[:id])
   end

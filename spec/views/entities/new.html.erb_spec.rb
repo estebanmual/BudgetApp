@@ -12,8 +12,8 @@ RSpec.describe 'entities/new', type: :feature do
   it 'renders new entity form' do
     expect(page).to have_selector('form.newEntity__form')
   end
-  
-  it "renders the navbar" do
+
+  it 'renders the navbar' do
     expect(page).to have_selector('nav.navbar')
   end
 

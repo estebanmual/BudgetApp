@@ -1,5 +1,4 @@
 class EntitiesController < ApplicationController
-
   def new
     @entity = Entity.new
   end

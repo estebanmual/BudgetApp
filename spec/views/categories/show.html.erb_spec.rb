@@ -26,5 +26,4 @@ RSpec.describe 'categories/show', type: :feature do
     click_on '<'
     expect(current_path).to eq('/categories')
   end
-
 end
