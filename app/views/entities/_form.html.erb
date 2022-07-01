@@ -1,4 +1,4 @@
-<%= form_with model: entity, url: category_entities_path do |form| %>
+<%= form_with model: entity, url: category_entities_path, class:"newEntity__form" do |form| %>
   <% if entity.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(entity.errors.count, "error") %> prohibited this entity from being saved:</h2>
@@ -26,7 +26,7 @@
     <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name %>
   </div>
 
-  <div>
-    <%= form.submit "Save" %>
+  <div class="newEntity__form-buttonDiv">
+    <%= form.submit "Save", class:"newEntity__form-button" %>
   </div>
 <% end %>
