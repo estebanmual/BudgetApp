@@ -1,7 +1,7 @@
 class Entity < ApplicationRecord
-    belongs_to :user
-    has_and_belongs_to_many :categories
+  belongs_to :user
+  has_and_belongs_to_many :categories
 
-    validates :name, presence: true
-    validates :amount, numericality: true
+  validates :name, presence: true
+  validates :amount, numericality: true
 end
