@@ -1,11 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<section class="categories">
 
-<h1>Categories</h1>
+  <div class="categories__list">
+    <% @categories.each do |category| %>
+      <%= render category %>
+    <% end %>
+  </div>
 
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-  <% end %>
-</div>
-
-<%= button_to "New category", new_category_path, method: :get %>
+  <div class="divButton">
+    <%= button_to "NEW CATEGORY", new_category_path, method: :get, class: "bottomButton" %>
+  </div>
+</section>
