@@ -1,15 +1,14 @@
 <%if current_page?(categories_path)%>
 <a href=<%=category_path(category.id) %>>
-    <div id="<%= dom_id category %>">
-        <%= image_tag (category.icon), height: '115', width: '115'%>
-        <%= category.name %>
-        $<%= category.entities.map {|entity| entity.amount}.sum %>
+    <div class="categoryCard__index">
+        <%= image_tag (category.icon), height: '90', width: '90'%>
+        <p><%= category.name %></p>
+        <p>$<%= category.entities.map {|entity| entity.amount}.sum %></p>
     </div>
 </a>
 <%else%>
-    <div id="<%= dom_id category %>">
-        <%= image_tag (category.icon), height: '115', width: '115'%>
-        <%= category.name %>
-        $<%= category.entities.map {|entity| entity.amount}.sum %>
+    <div class="categoryCard_show">
+        <p><%= category.name %></p>
+        <p>$<%= category.entities.map {|entity| entity.amount}.sum %></p>
     </div>
 <%end%>
