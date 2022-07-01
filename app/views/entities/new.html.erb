@@ -1,9 +1,4 @@
-<h1>New entity</h1>
-
-<%= render "form", entity: @entity %>
-
-<br>
-
-<div>
-  <%= button_to "<", category_path(params[:category_id]), method: :get %>
-</div>
+<section class="newEntity">
+  <h1>New entity</h1>
+  <%= render "form", entity: @entity %>
+</section>
