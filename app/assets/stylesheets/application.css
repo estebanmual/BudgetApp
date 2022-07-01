@@ -17,6 +17,11 @@ html {
   font-weight: 100;
 }
 
+body {
+  background-color: #f1f3f2;
+  padding-top: 7rem;
+}
+
 .desktop-only {
   display: none;
 }
@@ -38,11 +43,33 @@ html {
   padding: 0.5rem;
 }
 
-/* Navbar */
+/* Common */
 
-.navbar {
-  opacity: 0.95;
+a {
+  text-decoration: none;
 }
+
+.divButton {
+  width: 100%;
+  background-color: var(--second);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.4rem;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+
+.divButton button {
+  background: none;
+  border: white 1px solid;
+  width: 95vw;
+  height: 4rem;
+  color: white;
+}
+
+/* Navbar */
 
 .navbar-container input[type="checkbox"],
 .navbar-container .hamburger-lines {
@@ -51,16 +78,19 @@ html {
 
 .navbar-container {
   display: block;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100vw;
   height: 64px;
+  background-color: var(--main);
 }
 
 .navbar-container input[type="checkbox"] {
   position: absolute;
   display: block;
-  height: 32px;
-  width: 30px;
-  top: 20px;
+  height: 23px;
+  width: 35px;
+  top: 17px;
   left: 20px;
   z-index: 5;
   opacity: 0;
@@ -83,7 +113,7 @@ html {
   height: 4px;
   width: 100%;
   border-radius: 10px;
-  background: #333;
+  background: #fff;
 }
 
 .navbar-container .hamburger-lines .line1 {
@@ -102,7 +132,7 @@ html {
 
 .navbar .menu-items {
   padding-top: 100px;
-  background: #fff;
+  background: var(--main);
   height: 100vh;
   max-width: 300px;
   transform: translate(-150%);
@@ -112,6 +142,7 @@ html {
   padding-left: 50px;
   transition: transform 0.5s ease-in-out;
   box-shadow: 5px 0 10px 0 #aaa;
+  text-align: center;
 }
 
 .navbar .menu-items li {
@@ -120,11 +151,48 @@ html {
   font-weight: 500;
 }
 
+.categories__list a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+.menu-items li a {
+  color: #fff;
+}
+
 .logo {
   position: absolute;
   top: 20px;
   right: 15px;
   font-size: 2rem;
+  color: #fff;
+}
+
+.navbar__BackButton {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  font-size: 3rem;
+  color: #fff;
+  background: none;
+  border: none;
+  font-weight: 700;
+}
+
+.signOut_button {
+  width: 90%;
+  padding: 1rem;
+  background-color: var(--main);
+  border: 1px solid white;
+  color: #fff;
+}
+
+.menu-items__User {
+  font-size: 1.3rem;
+  color: #fff;
 }
 
 .navbar-container input[type="checkbox"]:checked ~ .menu-items {
@@ -141,6 +209,68 @@ html {
 
 .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
   transform: rotate(-35deg);
+}
+
+/* Categories Index */
+
+.categoryCard__index {
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  background-color: #fff;
+  padding: 1.2rem;
+  cursor: pointer;
+}
+
+.categoryCard__index::before {
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  top: 50%;
+  z-index: -1;
+  box-shadow: 0 0 35px -10px rgba(0, 0, 0, 1);
+}
+
+.categoryCard__index :last-child {
+  font-weight: 700;
+}
+
+/* Categories show */
+
+.categoryCard_show {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main);
+  padding: 1.2rem;
+}
+
+.categoryCard_show p {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.entityList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entity {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  background-color: #fff;
+  width: 85%;
+  margin: 1rem 0;
+}
+
+.entity p {
+  font-size: 1.2rem;
 }
 
 /* Categories Splash */
@@ -177,6 +307,48 @@ html {
   font-family: inherit;
   border-radius: 0.5rem;
   font-size: 1.8rem;
+}
+
+/* Categories New */
+
+.newCategory,
+.newEntity {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 150%;
+}
+
+.newCategory__form,
+.newEntity__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.newCategory__form-buttonDiv,
+.newEntity__form-buttonDiv {
+  width: 100%;
+  background-color: var(--second);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.4rem;
+  position: fixed;
+  bottom: 0;
+}
+
+.newCategory__form-button,
+.newEntity__form-button {
+  width: 95vw;
+  height: 4rem;
+  background: none;
+  border: 1px solid white;
+  color: #fff;
 }
 
 @media screen and (min-width: 780px) {
