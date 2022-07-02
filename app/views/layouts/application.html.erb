@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="desktop-only">
+      <h1>Sorry! We are working in the desktop version. Try by looging through your phone. </h1>
+    </div>
+    <div class="mobile-only">
+      <%= render "shared/navbar" unless current_page?("/") %> 
+      <%= yield %>
+    </div>
   </body>
 </html>

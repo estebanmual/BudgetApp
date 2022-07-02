@@ -1,15 +1,362 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main: #3778c2;
+  --second: #5fb523;
+  --text: #434b54;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
+body {
+  background-color: #f1f3f2;
+  padding-top: 7rem;
+}
+
+.desktop-only {
+  display: none;
+}
+
+/* Log In and Sign Up view */
+
+.logIn,
+.signUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.logIn > *,
+.signUp > * {
+  font-size: 150%;
+  padding: 0.5rem;
+}
+
+/* Common */
+
+a {
+  text-decoration: none;
+}
+
+.divButton {
+  width: 100%;
+  background-color: var(--second);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.4rem;
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+
+.divButton button {
+  background: none;
+  border: white 1px solid;
+  width: 95vw;
+  height: 4rem;
+  color: white;
+}
+
+/* Navbar */
+
+.navbar-container input[type="checkbox"],
+.navbar-container .hamburger-lines {
+  display: block;
+}
+
+.navbar-container {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 64px;
+  background-color: var(--main);
+}
+
+.navbar-container input[type="checkbox"] {
+  position: absolute;
+  display: block;
+  height: 23px;
+  width: 35px;
+  top: 17px;
+  left: 20px;
+  z-index: 5;
+  opacity: 0;
+}
+
+.navbar-container .hamburger-lines {
+  height: 23px;
+  width: 35px;
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.navbar-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.navbar .menu-items {
+  padding-top: 100px;
+  background: var(--main);
+  height: 100vh;
+  max-width: 300px;
+  transform: translate(-150%);
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  padding-left: 50px;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 5px 0 10px 0 #aaa;
+  text-align: center;
+}
+
+.navbar .menu-items li {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.categories__list a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+.menu-items li a {
+  color: #fff;
+}
+
+.logo {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.navbar__BackButton {
+  position: absolute;
+  top: 17px;
+  left: 20px;
+  font-size: 3rem;
+  color: #fff;
+  background: none;
+  border: none;
+  font-weight: 700;
+}
+
+.signOut_button {
+  width: 90%;
+  padding: 1rem;
+  background-color: var(--main);
+  border: 1px solid white;
+  color: #fff;
+}
+
+.menu-items__User {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .menu-items {
+  transform: translateX(0);
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  transform: rotate(35deg);
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  transform: rotate(-35deg);
+}
+
+/* Categories Index */
+
+.categoryCard__index {
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  background-color: #fff;
+  padding: 1.2rem;
+  cursor: pointer;
+}
+
+.categoryCard__index::before {
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  top: 50%;
+  z-index: -1;
+  box-shadow: 0 0 35px -10px rgba(0, 0, 0, 1);
+}
+
+.categoryCard__index :last-child {
+  font-weight: 700;
+}
+
+/* Categories show */
+
+.categoryCard_show {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main);
+  padding: 1.2rem;
+}
+
+.categoryCard_show p {
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.entityList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.entity {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+  background-color: #fff;
+  width: 85%;
+  margin: 1rem 0;
+}
+
+.entity p {
+  font-size: 1.2rem;
+}
+
+/* Categories Splash */
+
+.splash {
+  width: 80vw;
+  height: 100vh;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.splash__LogIn {
+  background-color: var(--main);
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  text-align: center;
+  width: 100%;
+  font-family: inherit;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.splash__SignUp {
+  background: #fff;
+  border: none;
+  margin: 0.3rem auto;
+  padding: 0.8rem;
+  text-align: center;
+  width: 100%;
+  font-family: inherit;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+}
+
+/* Categories New */
+
+.newCategory,
+.newEntity {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 150%;
+}
+
+.newCategory__form,
+.newEntity__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.newCategory__form-buttonDiv,
+.newEntity__form-buttonDiv {
+  width: 100%;
+  background-color: var(--second);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.4rem;
+  position: fixed;
+  bottom: 0;
+}
+
+.newCategory__form-button,
+.newEntity__form-button {
+  width: 95vw;
+  height: 4rem;
+  background: none;
+  border: 1px solid white;
+  color: #fff;
+}
+
+@media screen and (min-width: 780px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+}

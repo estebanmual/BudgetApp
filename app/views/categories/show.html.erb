@@ -1,0 +1,10 @@
+<%= render @category %>
+<div class="entityList">
+  <% @entities.each do |entity| %>
+    <%= render "entity", entity: entity %>
+  <% end %>
+</div>
+
+<div class="divButton">
+  <%= button_to "Add a new transaction", new_entity_path, method: :get, class: "bottomButton" %>
+</div>

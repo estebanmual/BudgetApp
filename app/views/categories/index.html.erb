@@ -1,0 +1,12 @@
+<section class="categories">
+
+  <div class="categories__list">
+    <% @categories.each do |category| %>
+      <%= render category %>
+    <% end %>
+  </div>
+
+  <div class="divButton">
+    <%= button_to "NEW CATEGORY", new_category_path, method: :get, class: "bottomButton" %>
+  </div>
+</section>
