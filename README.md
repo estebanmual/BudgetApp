@@ -14,7 +14,7 @@
 - Heroku
 
 ## Live Demo:
-- [Budgey]("https://budgey-app.herokuapp.com/")
+- [Budgey](https://budgey-app.herokuapp.com/)
 
 ## Getting Started
 
